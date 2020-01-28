@@ -1,6 +1,6 @@
 package com.hospitalSimulator.app;
 import com.hospitalSimulator.app.drugs.Drug;
-import com.hospitalSimulator.app.drugs.DrugFactory;
+import com.hospitalSimulator.app.drugs.DynamicDrugFactory;
 import com.hospitalSimulator.app.patients.Patient;
 import com.hospitalSimulator.app.patients.State;
 
@@ -13,7 +13,7 @@ import static java.util.Map.Entry.comparingByKey;
 public class Hospital {
     private  ArrayList<Patient> patients = new ArrayList<Patient>();
     private  HashSet<Drug> drugs = new HashSet<Drug>();
-    private DrugFactory drugFactory = new DrugFactory();
+    private DynamicDrugFactory dynamicDrugFactory = new DynamicDrugFactory();
     private HashMap<State, Integer> results = new HashMap<State, Integer>();
     private String outPutString;
 
@@ -46,7 +46,7 @@ public class Hospital {
         }
         String[] prescriptionArray = rawPrescription.trim().split(",");
         HashSet<String> prescriptions = new HashSet<String>(Arrays.asList(prescriptionArray));
-        this.drugs = drugFactory.getMixtures(prescriptions);
+        this.drugs = dynamicDrugFactory.getMixtures(prescriptions);
 
     }
 
