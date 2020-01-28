@@ -1,11 +1,11 @@
 package com.hospitalSimulater.app.patients;
 
 public enum State {
-    F("F"),
-    H("H"),
-    D("D"),
-    T("T"),
-    X("X");
+    Fever("F"),
+    Healthy("H"),
+    Diabetes("D"),
+    Tuberculosis("T"),
+    Dead("X");
 
     public String text;
 

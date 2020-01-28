@@ -30,7 +30,7 @@ public class DrugFactory {
         }else if (drugType.equals("PAs")){
             return new ParacetamolAspirin();
         }else if (drugType.equals("God")){
-            return new FylingFlyingSpaghettiMonster();
+            return new FlyingFlyingSpaghettiMonster();
         }
 
         //new Drug types are added here

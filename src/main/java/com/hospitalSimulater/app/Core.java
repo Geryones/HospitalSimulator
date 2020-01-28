@@ -19,34 +19,26 @@ public class Core {
     public static void main(String[] args) {
 
         if (args != null){
-            String rawPatientStates = args[0].trim();
-            String rawPrescription = args[1].trim();
-
-            String[] states = rawPatientStates.split(",");
-            String[] prescriptionArray = rawPrescription.split(",");
-            HashSet<String> prescription = new HashSet<String>(Arrays.asList(prescriptionArray));
-
-            for (String s : states){
-                    patientsStates.add(State.valueOf(s));
-            }
-
-            drugs = drugFactory.getMixtures(prescription);
-
-
-
-
-
-
-
-
-
-
-
-
-
+            parsePatients(args[0]);
+            parsePrescription(args[1]);
 
         }else System.out.println("Input required: 1. String, comma separated States, [2. String, comma separated drugs]");
 
 
     }
+
+    static void parsePatients(String rawPatientStates){
+        String[] states = rawPatientStates.trim().split(",");
+        for (String s : states){
+            patientsStates.add(State.valueOf(s));
+        }
+    }
+
+    static void parsePrescription(String rawPrescription){
+        String[] prescriptionArray = rawPrescription.trim().split(",");
+        HashSet<String> prescriptions = new HashSet<String>(Arrays.asList(prescriptionArray));
+        drugs = drugFactory.getMixtures(prescriptions);
+    }
+
+
 }

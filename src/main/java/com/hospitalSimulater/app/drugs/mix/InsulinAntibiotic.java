@@ -6,6 +6,13 @@ import com.hospitalSimulater.app.patients.State;
 
 public class InsulinAntibiotic extends AbstractDrug implements Drug {
     public State treat(State state) {
-        return null;
+        if (state.equals(State.Tuberculosis)){
+            return State.Healthy;
+        }
+
+        if (state.equals(State.Healthy)){
+            return State.Fever;
+        }
+        return state;
     }
 }

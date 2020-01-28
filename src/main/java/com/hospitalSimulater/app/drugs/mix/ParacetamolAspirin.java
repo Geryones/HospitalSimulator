@@ -6,6 +6,6 @@ import com.hospitalSimulater.app.patients.State;
 
 public class ParacetamolAspirin extends AbstractDrug implements Drug {
     public State treat(State state) {
-        return null;
+        return State.Dead;
     }
 }
