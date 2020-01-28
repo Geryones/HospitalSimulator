@@ -4,6 +4,9 @@ import com.hospitalSimulater.app.drugs.AbstractDrug;
 import com.hospitalSimulater.app.drugs.Drug;
 import com.hospitalSimulater.app.patients.State;
 
+/**
+ * Drug Cocktail of Insulin and Antibiotics
+ */
 public class InsulinAntibiotic extends AbstractDrug implements Drug {
     public State treat(State state) {
         if (state.equals(State.Tuberculosis)){

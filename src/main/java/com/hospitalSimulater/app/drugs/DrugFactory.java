@@ -53,7 +53,8 @@ public class DrugFactory {
             prescription.remove("P");
             prescription.remove("As");
             prescription.add("PAs");
-        } else if (prescription.contains("I") && prescription.contains("An")){
+        }
+        if (prescription.contains("I") && prescription.contains("An")){
             prescription.remove("I");
             prescription.remove("An");
             prescription.add("IAn");

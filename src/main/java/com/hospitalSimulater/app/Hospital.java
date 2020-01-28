@@ -7,82 +7,105 @@ import com.hospitalSimulater.app.patients.State;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.Map.Entry.comparingByKey;
+
 
 public class Hospital {
-    private static List<Patient> patients = new ArrayList<Patient>();
-    private static HashSet<Drug> drugs = new HashSet<Drug>();
-    private static DrugFactory drugFactory = new DrugFactory();
-    private static HashMap<State, Integer> results = new HashMap<State, Integer>();
+    private  ArrayList<Patient> patients = new ArrayList<Patient>();
+    private  HashSet<Drug> drugs = new HashSet<Drug>();
+    private  DrugFactory drugFactory = new DrugFactory();
+    private HashMap<State, Integer> results = new HashMap<State, Integer>();
+    private String outPutString;
 
-    public static void main(String[] args) {
-
-
-
-
-
+    public void doYourJob(String[] args) {
         if (args != null){
-            parsePrescription(args[1]);
+            if (args.length >= 2){
+                parsePrescription(args[1]);
+            }
             parsePatients(args[0]);
             curePatients(patients);
             collectData(patients);
-            printData(results);
+            concatData(results);
+            System.out.println(outPutString);
 
         }else System.out.println("Input required: 1. String, comma separated States, [2. String, comma separated drugs]");
-
-
     }
 
-    static void parsePatients(String rawPatientStates){
+    public void parsePatients(String rawPatientStates){
 
         String[] states = rawPatientStates.trim().split(",");
         for (String s : states){
-            patients.add(new Patient(State.fromString(s.toUpperCase().trim()), drugs));
+            this.patients.add(new Patient(State.fromString(s.toUpperCase().trim()), drugs));
         }
+
     }
 
-    static void parsePrescription(String rawPrescription){
-        if (rawPrescription.equals(null)){
+    public void parsePrescription(String rawPrescription){
+        if (rawPrescription.equals("")){
             return;
         }
         String[] prescriptionArray = rawPrescription.trim().split(",");
         HashSet<String> prescriptions = new HashSet<String>(Arrays.asList(prescriptionArray));
-        drugs = drugFactory.getMixtures(prescriptions);
+        this.drugs = drugFactory.getMixtures(prescriptions);
+
     }
 
-    static void curePatients(List<Patient> patients) {
+    public void curePatients(List<Patient> patients) {
         for (Patient p : patients){
             p.takeMyDrugs();
         }
     }
 
-    static void collectData(List<Patient> patients){
-        initResults();
+    public void collectData(List<Patient> patients){
+        initResults(this.results);
         for (Patient p : patients){
             int count = results.get(p.getState());
-            results.put(p.getState(), count+1 );
+            this.results.put(p.getState(), count+1 );
         }
+
     }
 
-    static void initResults(){
+    public HashMap<State, Integer> initResults(HashMap<State, Integer> results){
        State[] states = State.class.getEnumConstants();
 
        for (State s : states){
            results.put(s, 0);
        }
+       return  results;
     }
 
-    static void printData(HashMap<State, Integer> results){
+    public void concatData(HashMap<State, Integer> results){
 
-       String result = results.entrySet().stream().map((entry) ->
+       String result = results.entrySet().stream().sorted(comparingByKey()).map((entry) ->
               entry.getKey() + ":" + entry.getValue() + ",")
               .collect(Collectors.joining(" "));
 
-        result = result.substring(0, result.length() - 1);
-
-        System.out.println(result);
+        this.outPutString =  result.substring(0, result.length() - 1);
     }
 
 
+    public ArrayList<Patient> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(ArrayList<Patient> patients) {
+        this.patients = patients;
+    }
+
+    public HashSet<Drug> getDrugs() {
+        return drugs;
+    }
+
+    public void setDrugs(HashSet<Drug> drugs) {
+        this.drugs = drugs;
+    }
 
 
+    public HashMap<State, Integer> getResults() {
+        return results;
+    }
+
+    public String getOutPutString() {
+        return outPutString;
+    }
 }

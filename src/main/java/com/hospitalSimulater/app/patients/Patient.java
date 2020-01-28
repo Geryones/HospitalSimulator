@@ -3,6 +3,7 @@ package com.hospitalSimulater.app.patients;
 import com.hospitalSimulater.app.drugs.Drug;
 import com.hospitalSimulater.app.drugs.FlyingFlyingSpaghettiMonster;
 import com.hospitalSimulater.app.drugs.Insulin;
+import com.hospitalSimulater.app.drugs.mix.InsulinAntibiotic;
 
 import java.util.HashSet;
 
@@ -24,7 +25,7 @@ public class Patient {
                     break;
                 }
 
-                if (d instanceof Insulin) {
+                if (d instanceof Insulin || d instanceof InsulinAntibiotic) {
                     diabetesTreated = true;
                 }
                 state = d.treat(this.state);
