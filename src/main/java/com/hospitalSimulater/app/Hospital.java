@@ -79,8 +79,7 @@ public class Hospital {
        String result = results.entrySet().stream().sorted(comparingByKey()).map((entry) ->
               entry.getKey() + ":" + entry.getValue() + ",")
               .collect(Collectors.joining(" "));
-
-        this.outPutString =  result.substring(0, result.length() - 1);
+        this.outPutString = result.substring(0, result.length() - 1);
     }
 
 
