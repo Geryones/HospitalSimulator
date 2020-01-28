@@ -1,4 +1,4 @@
-package com.hospitalSimulater.app.patients;
+package com.hospitalSimulator.app.patients;
 
 public enum State {
     Fever("F"),

@@ -1,8 +1,8 @@
-package com.hospitalSimulater.app;
-import com.hospitalSimulater.app.drugs.Drug;
-import com.hospitalSimulater.app.drugs.DrugFactory;
-import com.hospitalSimulater.app.patients.Patient;
-import com.hospitalSimulater.app.patients.State;
+package com.hospitalSimulator.app;
+import com.hospitalSimulator.app.drugs.Drug;
+import com.hospitalSimulator.app.drugs.DrugFactory;
+import com.hospitalSimulator.app.patients.Patient;
+import com.hospitalSimulator.app.patients.State;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -13,7 +13,7 @@ import static java.util.Map.Entry.comparingByKey;
 public class Hospital {
     private  ArrayList<Patient> patients = new ArrayList<Patient>();
     private  HashSet<Drug> drugs = new HashSet<Drug>();
-    private  DrugFactory drugFactory = new DrugFactory();
+    private DrugFactory drugFactory = new DrugFactory();
     private HashMap<State, Integer> results = new HashMap<State, Integer>();
     private String outPutString;
 

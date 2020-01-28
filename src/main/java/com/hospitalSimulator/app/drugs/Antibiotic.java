@@ -1,6 +1,6 @@
-package com.hospitalSimulater.app.drugs;
+package com.hospitalSimulator.app.drugs;
 
-import com.hospitalSimulater.app.patients.State;
+import com.hospitalSimulator.app.patients.State;
 
 public class Antibiotic extends AbstractDrug implements Drug {
     public State treat(State state) {

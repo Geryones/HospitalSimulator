@@ -1,16 +1,10 @@
-package com.hospitalSimulater.app;
+package com.hospitalSimulator.app;
 
 
-import com.hospitalSimulater.app.drugs.Drug;
-import com.hospitalSimulater.app.patients.Patient;
-import com.hospitalSimulater.app.patients.State;
-import org.junit.After;
+import com.hospitalSimulator.app.patients.State;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
-
-import java.util.ArrayList;
-import java.util.HashSet;
 
 public class HospitalTest {
     Hospital hospital;

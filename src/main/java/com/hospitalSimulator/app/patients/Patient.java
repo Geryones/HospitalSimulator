@@ -1,9 +1,9 @@
-package com.hospitalSimulater.app.patients;
+package com.hospitalSimulator.app.patients;
 
-import com.hospitalSimulater.app.drugs.Drug;
-import com.hospitalSimulater.app.drugs.FlyingFlyingSpaghettiMonster;
-import com.hospitalSimulater.app.drugs.Insulin;
-import com.hospitalSimulater.app.drugs.mix.InsulinAntibiotic;
+import com.hospitalSimulator.app.drugs.Drug;
+import com.hospitalSimulator.app.drugs.FlyingFlyingSpaghettiMonster;
+import com.hospitalSimulator.app.drugs.Insulin;
+import com.hospitalSimulator.app.drugs.mix.InsulinAntibiotic;
 
 import java.util.HashSet;
 

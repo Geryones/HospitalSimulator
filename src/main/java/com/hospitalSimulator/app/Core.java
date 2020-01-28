@@ -1,4 +1,4 @@
-package com.hospitalSimulater.app;
+package com.hospitalSimulator.app;
 
 public class Core {
 

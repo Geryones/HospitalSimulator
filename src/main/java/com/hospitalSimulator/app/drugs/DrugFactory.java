@@ -1,7 +1,7 @@
-package com.hospitalSimulater.app.drugs;
+package com.hospitalSimulator.app.drugs;
 
-import com.hospitalSimulater.app.drugs.mix.InsulinAntibiotic;
-import com.hospitalSimulater.app.drugs.mix.ParacetamolAspirin;
+import com.hospitalSimulator.app.drugs.mix.InsulinAntibiotic;
+import com.hospitalSimulator.app.drugs.mix.ParacetamolAspirin;
 
 import java.util.HashSet;
 

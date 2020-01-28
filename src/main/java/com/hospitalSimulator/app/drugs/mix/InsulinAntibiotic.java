@@ -1,8 +1,8 @@
-package com.hospitalSimulater.app.drugs.mix;
+package com.hospitalSimulator.app.drugs.mix;
 
-import com.hospitalSimulater.app.drugs.AbstractDrug;
-import com.hospitalSimulater.app.drugs.Drug;
-import com.hospitalSimulater.app.patients.State;
+import com.hospitalSimulator.app.drugs.AbstractDrug;
+import com.hospitalSimulator.app.drugs.Drug;
+import com.hospitalSimulator.app.patients.State;
 
 /**
  * Drug Cocktail of Insulin and Antibiotics
