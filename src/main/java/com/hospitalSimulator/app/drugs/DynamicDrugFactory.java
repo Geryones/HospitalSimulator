@@ -1,37 +1,9 @@
 package com.hospitalSimulator.app.drugs;
-
-import com.hospitalSimulator.app.drugs.supplier.*;
-
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
-import java.util.function.Supplier;
 
 
-public class DynamicDrugFactory implements DrugFactory {
 
-    public static final Map<String, Supplier<? extends Drug>> registeredSuppliers = new HashMap<>();
-
-    static{
-        registeredSuppliers.put("As", new AspirinSupplier());
-        registeredSuppliers.put("An", new AntibioticSupplier());
-        registeredSuppliers.put("I", new InsulinSupplier());
-        registeredSuppliers.put("P", new ParacetamolSupplier());
-        registeredSuppliers.put("IAn", new InsulinAntibioticSupplier());
-        registeredSuppliers.put("PAs", new ParacetamolAspirinSupplier());
-        registeredSuppliers.put("God", new FlyingFlyingSpaghettiMonsterSupplier());
-    }
-
-    public static void registerSupplier(String type, Supplier<? extends Drug> supplier){
-        registeredSuppliers.put(type, supplier);
-    }
-
-    public static Drug getDrug(String type){
-        Supplier<? extends Drug> supplier = registeredSuppliers.get(type);
-        return supplier != null ? supplier.get() : null;
-    }
-
-
+public class DynamicDrugFactory extends DrugFactory {
 
     /**
      * Returns a Set of Drugs, Mixtures will be created
