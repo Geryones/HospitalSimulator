@@ -17,5 +17,14 @@ public enum State {
         return this.text;
     }
 
+    public static State fromString(String text){
+        for (State state : State.values()) {
+            if (state.text.equalsIgnoreCase(text)){
+                return state;
+            }
+        }
+        throw new IllegalArgumentException("This state does not exist: " + text );
+    }
+
 
 }

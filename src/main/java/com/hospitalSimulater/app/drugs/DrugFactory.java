@@ -44,7 +44,7 @@ public class DrugFactory {
      * @return Set of Drug, null if input is invalid
      */
     public HashSet<Drug> getMixtures(HashSet<String> prescription){
-        HashSet<Drug> mixedDrugs = null;
+        HashSet<Drug> mixedDrugs = new HashSet<>();
         if (prescription.isEmpty()){
             return null;
         }
@@ -65,9 +65,6 @@ public class DrugFactory {
         for (String drug : prescription) {
             mixedDrugs.add(getDrug(drug));
         }
-
-        //add a touch of god
-        mixedDrugs.add(getDrug("God"));
         return mixedDrugs;
     }
 }
