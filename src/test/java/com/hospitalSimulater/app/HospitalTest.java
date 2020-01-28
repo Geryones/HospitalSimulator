@@ -230,7 +230,7 @@ public class HospitalTest {
             divineHospital.doYourJob(input);
             holyCounter += divineHospital.getResults().get(State.Healthy);
         }
-        
+
         Assert.assertEquals(10, holyCounter, 5);
 
     }
