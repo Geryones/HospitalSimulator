@@ -17,35 +17,6 @@ public class HospitalTest {
 
 
     @Test
-    public void testInputStates(){
-        String input = "D,D,F,H,T";
-        hospital.parsePatients(input);
-        Assert.assertEquals(5, hospital.getPatients().size());
-    }
-
-    @Test
-    public void testInputDrugs(){
-        String input = "I,P";
-        hospital.parsePrescription(input);
-        Assert.assertEquals(2, hospital.getDrugs().size());
-    }
-
-    @Test
-    public void testInputSameDrugs(){
-        String input = "I,I,I,I,P";
-        hospital.parsePrescription(input);
-        Assert.assertEquals(2, hospital.getDrugs().size());
-    }
-
-    @Test
-    public void testInputDrugsMix(){
-        String input = "I,P,An,As";
-        hospital.parsePrescription(input);
-        Assert.assertEquals(2, hospital.getDrugs().size());
-    }
-
-
-    @Test
     public void testHospitalWithInsulin(){
         String[] input = new String[2];
         input[0] = "D,D";

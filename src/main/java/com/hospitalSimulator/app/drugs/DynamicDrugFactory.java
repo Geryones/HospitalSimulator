@@ -8,7 +8,7 @@ public class DynamicDrugFactory extends DrugFactory {
     /**
      * Returns a Set of Drugs, Mixtures will be created
      * @param prescription Set of Drugs as String
-     * @return Set of Drug, null if input is invalid
+     * @return Set of Drug
      */
     public HashSet<Drug> getMixtures(HashSet<String> prescription){
         HashSet<Drug> mixedDrugs = new HashSet<>();

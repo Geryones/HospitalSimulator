@@ -7,6 +7,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.function.Supplier;
 
+/**
+ * DrugFactory creates Drug-Objects
+ */
 public abstract class DrugFactory {
 
     public static final Map<String, Supplier<? extends Drug>> registeredSuppliers = new HashMap<>();
@@ -23,18 +26,26 @@ public abstract class DrugFactory {
     }
 
 
-
+    /**
+     * Get a new Drug-Object
+     * @param type Drug type
+     * @return new Drug object
+     */
     public static Drug getDrug(String type){
         Supplier<? extends Drug> supplier = registeredSuppliers.get(type);
         return supplier != null ? supplier.get() : null;
     }
 
-
+    /**
+     * Checks if there are mixtures
+     * @param prescription Set with prescribed drugs
+     * @return Set of Drug objects
+     */
     public abstract HashSet<Drug> getMixtures(HashSet<String> prescription);
 
     /**
      * Possible to add new Drugs
-     * @param type String for the Drug code
+     * @param type Drug type
      * @param supplier Supplier for the new Drug
      */
     static void registerSupplier(String type, Supplier<? extends Drug> supplier){

@@ -1,5 +1,8 @@
 package com.hospitalSimulator.app.patients;
 
+/**
+ * State of a patient
+ */
 public enum State {
     Fever("F"),
     Healthy("H"),
@@ -17,13 +20,18 @@ public enum State {
         return this.text;
     }
 
-    public static State fromString(String text){
+    /**
+     * Create a new State from String
+     * @param abbreviation abbreviation of the state
+     * @return new State
+     */
+    public static State fromString(String abbreviation){
         for (State state : State.values()) {
-            if (state.text.equalsIgnoreCase(text)){
+            if (state.text.equalsIgnoreCase(abbreviation)){
                 return state;
             }
         }
-        throw new IllegalArgumentException("This state does not exist: " + text );
+        throw new IllegalArgumentException("This state does not exist: " + abbreviation );
     }
 
 

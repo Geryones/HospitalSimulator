@@ -7,16 +7,27 @@ import com.hospitalSimulator.app.drugs.mix.InsulinAntibiotic;
 
 import java.util.HashSet;
 
+/**
+ * Simulates a patient and his Drugs
+ */
 public class Patient {
     private State state;
     private boolean diabetesTreated = false;
     private HashSet<Drug> drugs;
 
+    /**
+     * Constructor
+     * @param state state of the patient
+     * @param drugs drugs the patient uses
+     */
     public Patient(State state, HashSet<Drug> drugs) {
         this.state = state;
         this.drugs = drugs;
     }
 
+    /**
+     * Patient takes all his drugs
+     */
     public void takeMyDrugs(){
         if (drugs != null) {
 

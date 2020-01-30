@@ -1,5 +1,8 @@
 package com.hospitalSimulator.app;
 
+/**
+ * Main Class
+ */
 public class Core {
 
     public static void main(String[] args) {
