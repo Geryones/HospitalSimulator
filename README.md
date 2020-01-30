@@ -19,14 +19,29 @@ Thes drugs can be prescribed to your patients:
 - I: Insulin
 - P: Paracetamol
 
-## How to use
+Drugs behave as following: 
 
-1. Open with IDE and build Maven project.
+- Aspirin cures Fever;
+- Antibiotic cures Tuberculosis;
+- Insulin prevents diabetic subject from dying, does not cure Diabetes;
+- If insulin is mixed with antibiotic, healthy people catch Fever;
+- Paracetamol cures Fever;
+- Paracetamol kills subject if mixed with aspirin;
+- One time in a million the Flying Flying Spaghetti Monster shows his noodly power and resurrects a dead patient (Dead becomes Healthy).
 
-or 
+After the simulation, a brief summary is shown. It tells you how your treatment affected the patients. 
 
-Build from command line
+```F:NP,H:NP,D:NP,T:NP,X:NP```
 
+Where:
+
+- F, H, D, T, X are patient's health status codes;
+- NP is a number of patients for a given state;
+- E.g. "F:0,H:2,D:0,T:0,X:1" means there are two healthy patients and one that is dead
+
+## User guide
+
+1. Open with IDE and build Maven project or Build from command line
 2. Open command line 
 3. Navigate to build directory
 4. The program takes up to 2 Inputs:
