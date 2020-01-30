@@ -22,7 +22,7 @@ public class HospitalTest {
         input[0] = "D,D";
         input[1] = "I";
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:0, Healthy:0, Diabetes:2, Tuberculosis:0, Dead:0", hospital.getOutPutString());
+        Assert.assertEquals("F:0, H:0, D:2, T:0, X:0", hospital.getOutPutString());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class HospitalTest {
         input[0] = "F";
         input[1] = "P";
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:0, Healthy:1, Diabetes:0, Tuberculosis:0, Dead:0", hospital.getOutPutString());
+        Assert.assertEquals("F:0, H:1, D:0, T:0, X:0", hospital.getOutPutString());
 
     }
 
@@ -41,7 +41,7 @@ public class HospitalTest {
         input[0] = "F,H,D,T,T,H";
         input[1] = "P,As";
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:0, Healthy:0, Diabetes:0, Tuberculosis:0, Dead:6", hospital.getOutPutString());
+        Assert.assertEquals("F:0, H:0, D:0, T:0, X:6", hospital.getOutPutString());
 
     }
 
@@ -51,7 +51,7 @@ public class HospitalTest {
         input[0] = "F,H,D,T,T,H";
         input[1] = "As,P";
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:0, Healthy:0, Diabetes:0, Tuberculosis:0, Dead:6", hospital.getOutPutString());
+        Assert.assertEquals("F:0, H:0, D:0, T:0, X:6", hospital.getOutPutString());
 
     }
 
@@ -61,7 +61,7 @@ public class HospitalTest {
         input[0] = "H";
         input[1] = "I,An";
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:1, Healthy:0, Diabetes:0, Tuberculosis:0, Dead:0", hospital.getOutPutString());
+        Assert.assertEquals("F:1, H:0, D:0, T:0, X:0", hospital.getOutPutString());
 
     }
 
@@ -71,7 +71,7 @@ public class HospitalTest {
         input[0] = "H";
         input[1] = "An,I";
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:1, Healthy:0, Diabetes:0, Tuberculosis:0, Dead:0", hospital.getOutPutString());
+        Assert.assertEquals("F:1, H:0, D:0, T:0, X:0", hospital.getOutPutString());
 
     }
 
@@ -84,7 +84,7 @@ public class HospitalTest {
         input[0] = "D,D,D,D,D,D,D";
 
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:0, Healthy:0, Diabetes:0, Tuberculosis:0, Dead:7", hospital.getOutPutString());
+        Assert.assertEquals("F:0, H:0, D:0, T:0, X:7", hospital.getOutPutString());
 
     }
 
@@ -97,7 +97,7 @@ public class HospitalTest {
         input[0] = "D,D,D,D,D,D,D";
         input[1] = "As,An";
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:0, Healthy:0, Diabetes:0, Tuberculosis:0, Dead:7", hospital.getOutPutString());
+        Assert.assertEquals("F:0, H:0, D:0, T:0, X:7", hospital.getOutPutString());
 
     }
 
@@ -110,7 +110,7 @@ public class HospitalTest {
         input[0] = "D,D,D,D,D,D,D";
         input[1] = "P,An";
         hospital.doYourJob(input);
-        Assert.assertEquals("Fever:0, Healthy:0, Diabetes:0, Tuberculosis:0, Dead:7", hospital.getOutPutString());
+        Assert.assertEquals("F:0, H:0, D:0, T:0, X:7", hospital.getOutPutString());
 
     }
 

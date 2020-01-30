@@ -107,7 +107,7 @@ public class Hospital {
     private void concatData(HashMap<State, Integer> results){
 
        String result = results.entrySet().stream().sorted(comparingByKey()).map((entry) ->
-              entry.getKey() + ":" + entry.getValue() + ",")
+              entry.getKey().getText() + ":" + entry.getValue() + ",")
               .collect(Collectors.joining(" "));
         this.outPutString = result.substring(0, result.length() - 1);
     }

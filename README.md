@@ -50,7 +50,7 @@ Where:
    You can create as many patients as you like
    2. The drugs the patients take: As, An, I, P Note, all drugs are given to all patients
    Even if a drug is listed multiple times, it's only used once
-5. Run the program with your inputs e.g. ``` java -cp hospitalSimulator.jar com.hospitalSimulator.app.Core "D,D" "I" ```
+5. Run the program with your inputs e.g. ``` java -cp hospitalSimulator-1.0.jar com.hospitalSimulator.app.Core "D,D" "I" ```
 This runs the program with 2 Diabetes patients and they are treated with Insulin. 
    
 
