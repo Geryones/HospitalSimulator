@@ -42,6 +42,8 @@ Where:
 ## User guide
 
 1. Open with IDE and build Maven project or Build from command line
+Use the Maven command package to build the project. 
+With the command line: ```mvn package```
 2. Open command line 
 3. Navigate to build directory
 4. The program takes up to 2 Inputs:
