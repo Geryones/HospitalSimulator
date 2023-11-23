@@ -1,4 +1,4 @@
-# HostipalSimulator
+# HospitalSimulator
 
 A coding challenge
 
